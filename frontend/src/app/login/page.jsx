@@ -4,7 +4,7 @@ import classes from './login.module.css';
 const Login = () => {
   return (
     <div className='flex items-center justify-center'>
-<div className="bg-white border border-gray-200 shadow-sm lg:w-1/2 mt-7 rounded-xl dark:bg-neutral-900 dark:border-neutral-700 xl:w-1/2 md:w-3/4">
+      <div className="bg-white border border-gray-200 shadow-sm mt-7 rounded-xl dark:bg-neutral-900 dark:border-neutral-700">
   <div className="p-4 sm:p-7">
     <div className="text-center">
       <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
