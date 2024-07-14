@@ -1,6 +1,15 @@
+'use client';
 import React from 'react'
 
 const TodoList = () => {
+
+    const addtask = ( e ) => {
+        if(e.code === 'Enter')
+        {
+            console.log(e.target.value);
+        }
+    }
+    
   return (
     <div>
 
@@ -11,9 +20,11 @@ const TodoList = () => {
             <div className='border-b-2 border-gray-600'>
                 
                 <input 
-                className='w-full p-3 border-2 border-blue-500 rounded' 
-                placeholder='Add a new Task'
-                type="text" />
+                    className='w-full p-3 border-2 border-blue-500 rounded' 
+                    placeholder='Add a new Task'
+                    type="text" 
+                    onKeyDown={addtask}
+                />
                 
             </div>
             
