@@ -3,7 +3,25 @@ import React, { useState } from 'react'
 
 const TodoList = () => {
 
-    const [num, setNum] = useState(10)
+    // const [num, setNum] = useState(10);
+
+    const [taskList, setTaskList] = useState([
+        {
+            text: 'Learn HTML',
+            completed: false,
+            createdAt: new Date()
+        },
+        {
+            text: 'Learn CSS',
+            completed: false,
+            createdAt: new Date()
+        },
+        {
+            text: 'Learn JavScript',
+            completed: false,
+            createdAt: new Date()
+        },
+    ])
 
     const addtask = ( e ) => {
         if(e.code === 'Enter')
@@ -15,8 +33,8 @@ const TodoList = () => {
   return (
     <div className='max-w-[80%] mx-auto'>
 
-        {num}
-        <button onClick={ () => { setNum(num + 1); console.log(num); } }>add number</button>
+        {/* {num} */}
+        {/* <button onClick={ () => { setNum(num + 1); console.log(num); } }>add number</button> */}
 
         <h1 className='text-5xl font-bold text-center'>ToDo List</h1>
 
@@ -33,7 +51,11 @@ const TodoList = () => {
                 
             </div>
             
-            <div className='p-5'></div>
+            <div className='p-5'>
+                {
+                    taskList.map( (task) => { return task.text } )
+                }
+            </div>
             
         </div>
         
