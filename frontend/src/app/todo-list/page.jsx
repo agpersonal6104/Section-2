@@ -1,7 +1,9 @@
 'use client';
-import React from 'react'
+import React, { useState } from 'react'
 
 const TodoList = () => {
+
+    const [num, setNum] = useState(10)
 
     const addtask = ( e ) => {
         if(e.code === 'Enter')
@@ -11,7 +13,10 @@ const TodoList = () => {
     }
     
   return (
-    <div>
+    <div className='max-w-[80%] mx-auto'>
+
+        {num}
+        <button onClick={ () => { setNum(num + 1); console.log(num); } }>add number</button>
 
         <h1 className='text-5xl font-bold text-center'>ToDo List</h1>
 
