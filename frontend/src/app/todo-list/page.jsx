@@ -17,7 +17,7 @@ const TodoList = () => {
             createdAt: new Date()
         },
         {
-            text: 'Learn JavScript',
+            text: 'Learn JavaScript',
             completed: false,
             createdAt: new Date()
         },
@@ -53,7 +53,13 @@ const TodoList = () => {
             
             <div className='p-5'>
                 {
-                    taskList.map( (task) => { return task.text } )
+                    taskList.map( (task,index) => { return <div key={index}>
+                        <p>{task.text}</p>
+                        <div>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </div>
+                    </div> } )
                 }
             </div>
             
