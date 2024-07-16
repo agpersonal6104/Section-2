@@ -1,22 +1,23 @@
-import { useFormik } from 'formik'
-import React from 'react'
+import { useFormik } from 'formik';
+import React from 'react';
 
-const SignUp = () => {
-
-  const Signup = () =>{
-    const signupForm = useFormik({
+const SignUp = () => 
+  {
+  
+    const signupForm = useFormik
+    ({
       initialValues: {
         name: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: ''    
       },
 
-      onSubmit: (values) =>{
+      onSubmit: (values) =>
+      {
         console.log(values);
       }
     })
-  }
   
   return (
     <div className='max-w-xl mx-auto'>
