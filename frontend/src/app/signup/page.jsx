@@ -117,9 +117,11 @@ const SignUp = () =>
                 </svg>
               </div>
             </div>
-            <p className="hidden mt-2 text-xs text-red-600" id="email-error">
-              Please include a valid email address so we can get back to you
-            </p>
+            {
+              signupForm.touched.name && (
+                <p className='mt-2 text-xs text-red-600' id="email-error">{signupForm.errors.name}</p>
+              )
+            }
           </div>
           <div>
             <label
@@ -150,9 +152,11 @@ const SignUp = () =>
                 </svg>
               </div>
             </div>
-            <p className="hidden mt-2 text-xs text-red-600" id="email-error">
-              Please include a valid email address so we can get back to you
-            </p>
+            {
+              signupForm.touched.email && (
+                <p className='mt-2 text-xs text-red-600' id="email-error">{signupForm.errors.email}</p>
+              )
+            }
           </div>
           {/* End Form Group */}
           {/* Form Group */}
