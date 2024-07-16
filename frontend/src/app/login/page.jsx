@@ -3,20 +3,20 @@ import classes from './login.module.css';
 
 const Login = () => {
   return (
-    <div className='flex items-center justify-center'>
+    <div className='max-w-xl mx-auto'>
       <div className="bg-white border border-gray-200 shadow-sm mt-7 rounded-xl dark:bg-neutral-900 dark:border-neutral-700">
   <div className="p-4 sm:p-7">
     <div className="text-center">
       <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
-        Sign up
+        Sign in
       </h1>
       <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
-        Already have an account?
+        Don't have an account yet?
         <a
           className="font-medium text-blue-600 decoration-2 hover:underline dark:text-blue-500"
-          href="../examples/html/signin.html"
+          href="../examples/html/signup.html"
         >
-          Sign in here
+          Sign up here
         </a>
       </p>
     </div>
@@ -49,7 +49,7 @@ const Login = () => {
             fill="#EB4335"
           />
         </svg>
-        Sign up with Google
+        Sign in with Google
       </button>
       <div className="flex items-center py-3 text-xs text-gray-400 uppercase before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-neutral-500 dark:before:border-neutral-600 dark:after:border-neutral-600">
         Or
@@ -94,12 +94,20 @@ const Login = () => {
           {/* End Form Group */}
           {/* Form Group */}
           <div>
-            <label
-              htmlFor="password"
-              className="block mb-2 text-sm dark:text-white"
-            >
-              Password
-            </label>
+            <div className="flex items-center justify-between">
+              <label
+                htmlFor="password"
+                className="block mb-2 text-sm dark:text-white"
+              >
+                Password
+              </label>
+              <a
+                className="text-sm font-medium text-blue-600 decoration-2 hover:underline"
+                href="../examples/html/recover-account.html"
+              >
+                Forgot password?
+              </a>
+            </div>
             <div className="relative">
               <input
                 type="password"
@@ -127,44 +135,6 @@ const Login = () => {
             </p>
           </div>
           {/* End Form Group */}
-          {/* Form Group */}
-          <div>
-            <label
-              htmlFor="confirm-password"
-              className="block mb-2 text-sm dark:text-white"
-            >
-              Confirm Password
-            </label>
-            <div className="relative">
-              <input
-                type="password"
-                id="confirm-password"
-                name="confirm-password"
-                className="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                required=""
-                aria-describedby="confirm-password-error"
-              />
-              <div className="absolute inset-y-0 hidden pointer-events-none end-0 pe-3">
-                <svg
-                  className="text-red-500 size-5"
-                  width={16}
-                  height={16}
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                </svg>
-              </div>
-            </div>
-            <p
-              className="hidden mt-2 text-xs text-red-600"
-              id="confirm-password-error"
-            >
-              Password does not match the password
-            </p>
-          </div>
-          {/* End Form Group */}
           {/* Checkbox */}
           <div className="flex items-center">
             <div className="flex">
@@ -177,13 +147,7 @@ const Login = () => {
             </div>
             <div className="ms-3">
               <label htmlFor="remember-me" className="text-sm dark:text-white">
-                I accept the{" "}
-                <a
-                  className="font-medium text-blue-600 decoration-2 hover:underline dark:text-blue-500"
-                  href="#"
-                >
-                  Terms and Conditions
-                </a>
+                Remember me
               </label>
             </div>
           </div>
@@ -192,7 +156,7 @@ const Login = () => {
             type="submit"
             className="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-semibold text-white bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
           >
-            Sign up
+            Sign in
           </button>
         </div>
       </form>
