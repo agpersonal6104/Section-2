@@ -1,6 +1,19 @@
+import { useFormik } from 'formik'
 import React from 'react'
 
 const SignUp = () => {
+
+  const Signup = () =>{
+    const signupForm = useFormik({
+      initialValues: {
+        name: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+      }
+    })
+  }
+  
   return (
     <div className='max-w-xl mx-auto'>
       <div className="bg-white border border-gray-200 shadow-sm mt-7 rounded-xl dark:bg-neutral-900 dark:border-neutral-700">
