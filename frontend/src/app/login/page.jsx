@@ -7,13 +7,12 @@ import * as Yup from 'yup';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
-  password: Yup.string()
+  password: Yup.string().required('Required')
   .min(8, 'Password must be 8 characters long')
   .matches(/[a-z]/, 'must include lower case')
   .matches(/[A-Z]/, 'must include upper case')
   .matches(/[0-9]/, 'must contain a number')
   .matches(/\W/, "Must contain special characters")
-  .required('Required')
 })
 
 const Login = () => {
@@ -168,7 +167,7 @@ const Login = () => {
             </div>
             {
               loginForm.touched.password && (
-                <p className="mt-2 text-xs text-red-600" id="email-error">
+                <p className="mt-2 text-xs text-red-600" id="password-error">
                   {loginForm.errors.password}
                 </p>
               )
