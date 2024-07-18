@@ -9,7 +9,13 @@ const SignupSchema = Yup.object().shape({
     .min(2, 'Make it long')
     .max(50, 'Too Long!')
     .required('Name is Required'),
-  email: Yup.string().email('Invalid email').required('Required')
+  email: Yup.string().email('Invalid email').required('Required'),
+  password: Yup.string().required('Required')
+  .matches(/[a-z]/, 'must include lower case')
+  .matches(/[A-Z]/, 'must include upper case')
+  .matches(/[0-9]/ , 'must contain a number')
+  .matches(/\W/, "Must contain special characters"),
+  confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match')
 });
 
 const Signup = () => {
@@ -198,6 +204,13 @@ const Signup = () => {
                   <p className="hidden mt-2 text-xs text-red-600" id="password-error">
                     8+ characters required
                   </p>
+                  {
+                    signupForm.touched.confirmPassword && (
+                      <p className="mt-2 text-xs text-red-600" id="email-error">
+                        {signupForm.errors.confirmPassword}
+                      </p>
+                    )
+                  }
                 </div>
                 {/* End Form Group */}
                 {/* Form Group */}
@@ -237,6 +250,13 @@ const Signup = () => {
                   >
                     Password does not match the password
                   </p>
+                  {
+                    signupForm.touched.confirmPassword && (
+                      <p className="mt-2 text-xs text-red-600" id="email-error">
+                        {signupForm.errors.confirmPassword}
+                      </p>
+                    )
+                  }
                 </div>
                 {/* End Form Group */}
                 {/* Checkbox */}
