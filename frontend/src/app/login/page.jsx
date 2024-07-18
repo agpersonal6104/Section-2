@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './login.module.css';
+import Link from 'next/link';
 
 const Login = () => {
   return (
@@ -12,12 +13,12 @@ const Login = () => {
       </h1>
       <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
         Don't have an account yet?
-        <a
+        <Link
           className="font-medium text-blue-600 decoration-2 hover:underline dark:text-blue-500"
           href="/signup"
         >
           Sign up here
-        </a>
+        </Link>
       </p>
     </div>
     <div className="mt-5">
