@@ -1,6 +1,20 @@
+'use client';
+import { useFormik } from 'formik';
 import React from 'react'
 import classes from './login.module.css';
 import Link from 'next/link';
+import * as Yup from 'yup';
+
+const LoginSchema = Yup.object().shape({
+  email: Yup.string().email('Invalid email').required('Required'),
+  password: Yup.string()
+  .min(8, 'Password must be 8 characters long')
+  .matches(/[a-z]/, 'must include lower case')
+  .matches(/[A-Z]/, 'must include upper case')
+  .matches(/[0-9]/, 'must contain a number')
+  .matches(/\W/, "Must contain special characters")
+  .required('Required')
+})
 
 const Login = () => {
   return (
