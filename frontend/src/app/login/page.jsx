@@ -17,6 +17,21 @@ const LoginSchema = Yup.object().shape({
 })
 
 const Login = () => {
+
+  const loginForm = useFormik({
+    initialValues: {
+      email: '',
+      password: ''
+    },
+
+    onSubmit: (values) => {
+      console.log(values);
+      // send values to backend
+    },
+
+    validationSchema: LoginSchema
+  })
+  
   return (
     <div className='max-w-xl mx-auto'>
       <div className="bg-white border border-gray-200 shadow-sm mt-7 rounded-xl dark:bg-neutral-900 dark:border-neutral-700">
