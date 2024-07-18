@@ -84,7 +84,7 @@ const Login = () => {
         Or
       </div>
       {/* Form */}
-      <form>
+      <form onSubmit={loginForm.handleSubmit}>
         <div className="grid gap-y-4">
           {/* Form Group */}
           <div>
