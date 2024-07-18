@@ -42,7 +42,7 @@ const Signup = () => {
               Already have an account?
               <a
                 className="font-medium text-blue-600 decoration-2 hover:underline dark:text-blue-500"
-                href="../examples/html/signin.html"
+                href="/login"
               >
                 Sign in here
               </a>

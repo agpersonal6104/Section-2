@@ -14,7 +14,7 @@ const Login = () => {
         Don't have an account yet?
         <a
           className="font-medium text-blue-600 decoration-2 hover:underline dark:text-blue-500"
-          href="../examples/html/signup.html"
+          href="/signup"
         >
           Sign up here
         </a>
