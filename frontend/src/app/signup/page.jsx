@@ -10,12 +10,13 @@ const SignupSchema = Yup.object().shape({
     .max(50, 'Too Long!')
     .required('Name is Required'),
   email: Yup.string().email('Invalid email').required('Required'),
-  password: Yup.string().required('Required')
+  password: Yup.string()
   .min(8, 'Password must be 8 characters long')
   .matches(/[a-z]/, 'must include lower case')
   .matches(/[A-Z]/, 'must include upper case')
   .matches(/[0-9]/, 'must contain a number')
-  .matches(/\W/, "Must contain special characters"),
+  .matches(/\W/, "Must contain special characters")
+  .required('Required'),
   confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match')
 });
 
@@ -207,7 +208,7 @@ const Signup = () => {
                   </p>
                   {
                     signupForm.touched.confirmPassword && (
-                      <p className="mt-2 text-xs text-red-600" id="email-error">
+                      <p className="mt-2 text-xs text-red-600" id="password-error">
                         {signupForm.errors.confirmPassword}
                       </p>
                     )
@@ -253,7 +254,7 @@ const Signup = () => {
                   </p>
                   {
                     signupForm.touched.confirmPassword && (
-                      <p className="mt-2 text-xs text-red-600" id="email-error">
+                      <p className="mt-2 text-xs text-red-600" id="password-error">
                         {signupForm.errors.confirmPassword}
                       </p>
                     )
