@@ -203,9 +203,6 @@ const Signup = () => {
                       </svg>
                     </div>
                   </div>
-                  <p className="hidden mt-2 text-xs text-red-600" id="password-error">
-                    8+ characters required
-                  </p>
                   {
                     signupForm.touched.confirmPassword && (
                       <p className="mt-2 text-xs text-red-600" id="password-error">
@@ -246,12 +243,6 @@ const Signup = () => {
                       </svg>
                     </div>
                   </div>
-                  <p
-                    className="hidden mt-2 text-xs text-red-600"
-                    id="confirm-password-error"
-                  >
-                    Password does not match the password
-                  </p>
                   {
                     signupForm.touched.confirmPassword && (
                       <p className="mt-2 text-xs text-red-600" id="password-error">

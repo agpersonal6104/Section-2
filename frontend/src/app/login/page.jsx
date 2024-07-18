@@ -99,7 +99,8 @@ const Login = () => {
               <input
                 type="email"
                 id="email"
-                name="email"
+                onChange={loginForm.handleChange}
+                value={loginForm.values.email}
                 className="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 required=""
                 aria-describedby="email-error"
@@ -117,9 +118,13 @@ const Login = () => {
                 </svg>
               </div>
             </div>
-            <p className="hidden mt-2 text-xs text-red-600" id="email-error">
-              Please include a valid email address so we can get back to you
-            </p>
+            {
+              loginForm.touched.email && (
+                <p className="mt-2 text-xs text-red-600" id="email-error">
+                  {loginForm.errors.email}
+                </p>
+              )
+            }
           </div>
           {/* End Form Group */}
           {/* Form Group */}
@@ -142,7 +147,8 @@ const Login = () => {
               <input
                 type="password"
                 id="password"
-                name="password"
+                onChange={loginForm.handleChange}
+                value={loginForm.values.password}
                 className="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 required=""
                 aria-describedby="password-error"
@@ -160,9 +166,13 @@ const Login = () => {
                 </svg>
               </div>
             </div>
-            <p className="hidden mt-2 text-xs text-red-600" id="password-error">
-              8+ characters required
-            </p>
+            {
+              loginForm.touched.password && (
+                <p className="mt-2 text-xs text-red-600" id="email-error">
+                  {loginForm.errors.password}
+                </p>
+              )
+            }
           </div>
           {/* End Form Group */}
           {/* Checkbox */}
