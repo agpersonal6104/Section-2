@@ -209,9 +209,9 @@ const Signup = () => {
                     </div>
                   </div>
                   {
-                    signupForm.touched.confirmPassword && (
+                    signupForm.touched.password && (
                       <p className="mt-2 text-xs text-red-600" id="password-error">
-                        {signupForm.errors.confirmPassword}
+                        {signupForm.errors.password}
                       </p>
                     )
                   }
