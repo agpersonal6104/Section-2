@@ -31,9 +31,14 @@ const Signup = () => {
       confirmPassword: ''
     },
 
-    onSubmit: (values) => {
+    onSubmit: (values, {resetForm}) => {
       console.log(values);
       // send values to backend
+      
+      setTimeout(()=>{
+        resetForm();
+      },3000);
+      
     },
     validationSchema: SignupSchema
 
@@ -277,6 +282,7 @@ const Signup = () => {
                 {/* End Checkbox */}
                 <button
                   type="submit"
+                  disabled={ signupForm.isSubmitting }
                   className="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-semibold text-white bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                 >
                   Sign up
