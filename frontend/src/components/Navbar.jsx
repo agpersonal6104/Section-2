@@ -1,7 +1,13 @@
+'use client';
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React from 'react'
 
 const Navbar = () => {
+
+  const path = usePathname();
+  console.log(path);
+  
   return (
     <>
   {/* ========== HEADER ========== */}

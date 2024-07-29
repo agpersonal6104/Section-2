@@ -4,6 +4,7 @@ import React from 'react'
 import classes from './login.module.css';
 import Link from 'next/link';
 import * as Yup from 'yup';
+import { usePathname } from 'next/navigation';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
