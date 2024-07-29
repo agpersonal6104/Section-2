@@ -78,24 +78,24 @@ const Navbar = () => {
           >
             Home
           </Link>
-          <a
-            className="py-3 font-medium ps-px sm:px-3 text-white/80 hover:text-white"
+          <Link
+            className={"py-3 font-medium ps-px sm:px-3 "+ (path === '/' ? 'text-white' : 'text-white/80') }
             href="#"
           >
             Account
-          </a>
-          <a
+          </Link>
+          <Link
             className="py-3 font-medium ps-px sm:px-3 text-white/80 hover:text-white"
             href="#"
           >
             Work
-          </a>
-          <a
+          </Link>
+          <Link
             className="py-3 font-medium ps-px sm:px-3 text-white/80 hover:text-white"
             href="#"
           >
             Blog
-          </a>
+          </Link>
           <div className="hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none] sm:[--trigger:hover] py-3 ps-px sm:px-3">
             <button
               type="button"
@@ -181,7 +181,7 @@ const Navbar = () => {
             </div>
           </div>
           <Link
-            className="flex items-center py-2 font-medium gap-x-2 text-white/80 hover:text-white sm:border-s sm:border-white/30 md:py-0 sm:my-6 sm:ps-6"
+            className={"flex items-center py-2 font-medium gap-x-2 sm:border-s sm:border-white/30 md:py-0 sm:my-6 sm:ps-6 "+ (path === '/' ? 'text-white' : 'text-white/80')}
             href="/login"
           >
             <svg
