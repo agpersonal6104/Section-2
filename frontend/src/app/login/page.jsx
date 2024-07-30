@@ -5,6 +5,7 @@ import classes from './login.module.css';
 import Link from 'next/link';
 import * as Yup from 'yup';
 import { usePathname } from 'next/navigation';
+import Input from '@/components/Input';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
@@ -204,6 +205,9 @@ const Login = () => {
     </div>
   </div>
 </div>
+
+  <Input id={'Name'} label={'Full name'} type={'text'} />
+  <Input id={'Email'} label={'Email Address'} type={'email'} />
 
     </div>
   )
