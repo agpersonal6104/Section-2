@@ -20,7 +20,15 @@ const EventHandling = () => {
     }
     
   return (
-    <div className='max-w-5xl mx-auto'>
+    <div className='max-w-5xl mx-auto'
+    onMouseMove={ (e) => {
+        document.getElementById('circle').style.left = e.clientX-20 + 'px';
+        document.getElementById('circle').style.top = e.clientY-20 + 'px';
+    }
+    }>
+
+        <div id='circle' className='absolute border border-black rounded-full size-12 big-black'></div>
+
         <h1 className='my-5 text-3xl font-bold text-center'>Event Handling in React</h1>
         <hr />
 
