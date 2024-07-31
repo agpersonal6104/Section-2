@@ -27,7 +27,20 @@ const EventHandling = () => {
     }
     }>
 
-        <div id='circle' className='absolute border border-black rounded-full size-12 big-black'></div>
+        <div id='circle'
+            onMouseDown={(e)=> {
+                e.target.style.height = '30px';
+                e.target.style.width = '30px';
+                }
+            }
+            onMouseUp={(e)=>{
+                e.target.style.height = '46px';
+                e.target.style.width = '46px';
+                }
+            } 
+            className='absolute border border-black rounded-full size-12 big-black'>
+                
+        </div>
 
         <h1 className='my-5 text-3xl font-bold text-center'>Event Handling in React</h1>
         <hr />
