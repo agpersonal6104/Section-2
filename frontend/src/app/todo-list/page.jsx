@@ -72,7 +72,7 @@ const TodoList = () => {
                                 <div className='flex justify-end gap-3 mt-3'>
                                     <button
                                         onClick={() => { toggleComplete(index) }}
-                                        className='px-3 text-white bg-blue-500 rounded-full'>Edit</button>
+                                        className='px-3 text-white bg-blue-500 rounded-full'>{}</button>
                                         
                                     <button
                                         onClick={() => { deleteTask(index) }}
