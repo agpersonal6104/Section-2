@@ -32,10 +32,9 @@ const Signup = () => {
     },
 
     onSubmit: (values, {resetForm}) => {
-      console.log(values);
-      // send values to backend
       
       setTimeout(()=>{
+        console.log(values);// send values to backend
         resetForm();
       },3000);
       
