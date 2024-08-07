@@ -1,4 +1,5 @@
 'use client';
+import { IconLoader } from '@tabler/icons-react';
 import { useFormik } from 'formik';
 import Link from 'next/link';
 import React from 'react';
@@ -284,7 +285,7 @@ const Signup = () => {
                   disabled={ signupForm.isSubmitting }
                   className="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-semibold text-white bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                 >
-                  Sign up
+                  {<IconLoader />} <span>Sign up</span>
                 </button>
               </div>
             </form>
