@@ -1,5 +1,6 @@
 'use client';
 import { IconLoader } from '@tabler/icons-react';
+import axios from 'axios';
 import { useFormik } from 'formik';
 import Link from 'next/link';
 import React from 'react';
@@ -40,7 +41,16 @@ const Signup = () => {
       //   resetForm();
       // },3000);
       
-      
+      axios.post('http://localhost:5000/user/add', values)
+      .then((response) => {
+        
+        console.log(response.status);
+        
+      }).catch((err) => {
+        
+        console.log(err.response.data);
+        
+      });
     },
     validationSchema: SignupSchema
 
