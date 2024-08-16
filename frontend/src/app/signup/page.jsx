@@ -33,7 +33,7 @@ const Signup = () => {
       confirmPassword: ''
     },
 
-    onSubmit: (values, {resetForm}) => {
+    onSubmit: (values, { resetForm, setSubmitting}) => {
       
       // setTimeout(()=>{
       //   console.log(values);
@@ -45,10 +45,12 @@ const Signup = () => {
       .then((response) => {
         
         console.log(response.status);
+        resetForm();
         
       }).catch((err) => {
         
         console.log(err.response.data);
+        setSubmitting(false);
         
       });
     },
