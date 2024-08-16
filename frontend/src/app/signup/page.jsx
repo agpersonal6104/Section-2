@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import Link from 'next/link';
 import React from 'react';
+import toast from 'react-hot-toast';
 import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape({
@@ -46,12 +47,14 @@ const Signup = () => {
         
         console.log(response.status);
         resetForm();
+        toast.success('User Registered Successfully!');
         
       }).catch((err) => {
         
         console.log(err);
         console.log(err.response?.data);
         setSubmitting(false);
+        toast.error('Something went Wrong!');
         
       });
     },
