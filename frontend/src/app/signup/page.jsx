@@ -34,10 +34,12 @@ const Signup = () => {
 
     onSubmit: (values, {resetForm}) => {
       
-      setTimeout(()=>{
-        console.log(values);// send values to backend
-        resetForm();
-      },3000);
+      // setTimeout(()=>{
+      //   console.log(values);
+      //   // send values to backend
+      //   resetForm();
+      // },3000);
+      
       
     },
     validationSchema: SignupSchema
