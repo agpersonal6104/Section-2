@@ -54,7 +54,7 @@ const Signup = () => {
         console.log(err);
         console.log(err.response?.data);
         setSubmitting(false);
-        toast.error('Something went Wrong!');
+        toast.error(err?.response?.data?.message);
         
       });
     },
