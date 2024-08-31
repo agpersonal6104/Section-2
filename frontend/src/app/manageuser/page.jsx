@@ -1,3 +1,4 @@
+'use client';
 import axios from 'axios'
 import React, { useEffect } from 'react'
 
@@ -13,11 +14,9 @@ const manageUser = () => {
 
   useEffect(() => {
     
-  
-    return () => {
-      second
-    }
-  }, [third])
+    fetchUsersData();
+    
+  }, [])
   
   
   return (
