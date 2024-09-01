@@ -1,6 +1,7 @@
 'use client';
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast';
 
 const manageUser = () => {
   
@@ -18,6 +19,17 @@ const manageUser = () => {
     fetchUsersData();
   }, []);
 
+  const deleteUser = (id) => {
+    axios.delete('http://localhost:5000/user/delete/'+id)
+    .then((result) => {
+      toast.success('User deleted Successfully!');
+      fetchUsersData();
+    }).catch((err) => {
+      console.log(err);
+      toast.error('Failed to delete user!');
+    });
+  }
+
   const displayusers = () => {
     
     if(userList.length === 0)
@@ -34,6 +46,7 @@ const manageUser = () => {
             <th className='p-3 text-lg'>Name</th>
             <th className='p-3 text-lg'>Email</th>
             <th className='p-3 text-lg'>City</th>
+            <th colSpan={2}>Actions</th>
             </tr>
           
         </thead>
@@ -47,6 +60,12 @@ const manageUser = () => {
                 <td className='p-3'>{user.name}</td>
                 <td className='p-3'>{user.email}</td>
                 <td className='p-3'>{user.city}</td>
+                <td>
+                  <button className='px-3 py-1 text-white bg-red-500 rounded-full'>Delete</button>
+                </td>
+                <td>
+                  <button className='px-3 py-1 text-white bg-blue-500 rounded-full'>Edit</button>
+                </td>
                 
               </tr>
             } )
