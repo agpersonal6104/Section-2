@@ -61,7 +61,7 @@ const manageUser = () => {
                 <td className='p-3'>{user.email}</td>
                 <td className='p-3'>{user.city}</td>
                 <td>
-                  <button className='px-3 py-1 text-white bg-red-500 rounded-full'>Delete</button>
+                  <button className='px-3 py-1 text-white bg-red-500 rounded-full' onClick={ () => { deleteUser(user._id)} }>Delete</button>
                 </td>
                 <td>
                   <button className='px-3 py-1 text-white bg-blue-500 rounded-full'>Edit</button>
