@@ -1,5 +1,6 @@
 'use client';
 import axios from 'axios'
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 
@@ -67,7 +68,7 @@ const manageUser = () => {
                     Delete</button>
                 </td>
                 <td>
-                  <button className='px-3 py-1 text-white bg-blue-500 rounded-full'>Edit</button>
+                  <Link href={'/updateUser/'+user._id} className='px-3 py-1 text-white bg-blue-500 rounded-full'>Edit</Link>
                 </td>
                 
               </tr>
