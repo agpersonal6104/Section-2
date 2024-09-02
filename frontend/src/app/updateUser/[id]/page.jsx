@@ -1,7 +1,7 @@
 'use client';
 import axios from 'axios';
 import { Formik } from 'formik';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 
@@ -10,6 +10,8 @@ const UpdateUser = () => {
     const { id } = useParams();
 
     const [userData, setUserData] = useState(null);
+    
+    const router = useRouter();
 
     const getUserData = async () => {
         const res = await axios.get('http://localhost:5000/user/getbyid/' +id);
@@ -24,9 +26,10 @@ const UpdateUser = () => {
     const submitForm = (values) => {
         console.log(values);
 
-        axios.put('http://localhost:5000/user/update'+id, values)
+        axios.put('http://localhost:5000/user/update/'+id, values)
         .then((result) => {
             toast.success('UserUpdated Successfully!;')
+            router.push('/manageuser');
         }).catch((err) => {
             console.log(err);
             toast.error('Failed to update user!');
