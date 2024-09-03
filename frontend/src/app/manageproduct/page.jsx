@@ -26,6 +26,13 @@ const manageproduct = () => {
             toast.error('Failed to delete Product!');
         });
     }
+
+    const displayProducts = () => {
+        if(productList.length === 0)
+        {
+            return <p>Loading.... Please Wait!</p>
+        }
+    }
     
   return (
     <div>
