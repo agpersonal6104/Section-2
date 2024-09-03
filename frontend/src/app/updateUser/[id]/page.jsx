@@ -28,7 +28,7 @@ const UpdateUser = () => {
 
         axios.put('http://localhost:5000/user/update/'+id, values)
         .then((result) => {
-            toast.success('UserUpdated Successfully!;')
+            toast.success('UserUpdated Successfully!')
             router.push('/manageuser');
         }).catch((err) => {
             console.log(err);
