@@ -61,6 +61,12 @@ const manageproduct = () => {
                             <td className='p-3'>{product.category}</td>
                             <td className='p-3'>{product.model}</td>
                             <td className='p-3'>{product.price}</td>
+                            <td>
+                                <button className='px-3 py-1 text-white bg-red-500 rounded-full'
+                                onClick={ () => { deleteUser(user._id)} }
+                            >Delete</button>
+                            
+                            </td>
                         </tr>
                     })
                 }
