@@ -206,9 +206,6 @@ const Login = () => {
   </div>
 </div>
 
-  <Input id={'Name'} label={'Full name'} type={'text'} />
-  <Input id={'Email'} label={'Email Address'} type={'email'} />
-
     </div>
   )
 }
