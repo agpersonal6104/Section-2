@@ -36,15 +36,8 @@ const Signup = () => {
 
     onSubmit: (values, { resetForm, setSubmitting}) => {
       
-      // setTimeout(()=>{
-      //   console.log(values);
-      //   // send values to backend
-      //   resetForm();
-      // },3000);
-      
       axios.post('http://localhost:5000/user/add', values)
       .then((response) => {
-        
         console.log(response.status);
         resetForm();
         toast.success('User Registered Successfully!');
