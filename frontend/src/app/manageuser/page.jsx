@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 const manageUser = () => {
   
   const [userList, setUserList] = useState([]);
+  
   const fetchUsersData = async () => {
 
     
