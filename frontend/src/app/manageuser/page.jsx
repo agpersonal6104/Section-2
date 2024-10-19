@@ -9,7 +9,6 @@ const manageUser = () => {
   const [userList, setUserList] = useState([]);
   
   const fetchUsersData = async () => {
-
     
     const res = await axios.get('http://localhost:5000/user/getall');
     console.log(res.status);
